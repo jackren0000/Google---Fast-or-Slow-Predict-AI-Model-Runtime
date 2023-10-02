@@ -10,6 +10,14 @@ There are two types of configuration/optimizations:
 1. A layout configuration: control how tensors in the graph are laid out in the physical memory, by specifying the dimension order 
 of each input and output of an operation node.
 
+Add Operation: Expected to add two tensors of shape [2,4,16] together, resulting in a tensor of the same shape [2,4,16].
+
+Max Operation: Adjusts the tensor shape to [4,16,8]. The configuration {1,0,2} suggests a reordering of the tensor dimensions from [2,4,16] to [4,2,16].
+
+Reshape Operation: Alters the tensor shape to [128]. The configurations {0}, (0,1,2}, and (0,2,1) imply that the output tensor keeps its original layout, and for the input tensors, the first keeps its original layout while the second one has its second and third dimensions swapped.
+
+Convolution (Conv) Operation: Applies a convolution to the input tensor, producing an output tensor of shape [2,8]. The {1,0} configuration suggests that the first and second dimensions of the output tensor are swapped.
+
 2
 
 
