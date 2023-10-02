@@ -18,7 +18,24 @@ Reshape Operation: Alters the tensor shape to [128]. The configurations {0}, (0,
 
 Convolution (Conv) Operation: Applies a convolution to the input tensor, producing an output tensor of shape [2,8]. The {1,0} configuration suggests that the first and second dimensions of the output tensor are swapped.
 
-2
+2. A tile configuration: controls the tile size of each fused subgraph.
+
+
+Configuration 1:
+
+output: [2,8]: This suggests that the output of the graph should be split into tiles where each tile's size is a multiple of [2,8].
+
+kernel: [4,16,8]: This suggests that the convolution kernel should be split into tiles where each tile's size is a multiple of [4,16,8].
+
+The total runtime for this configuration is 123 ms.
+
+Configuration 2:
+
+output: [2,4]: This suggests that the output of the graph should be split into tiles where each tile's size is a multiple of [2,4].
+
+kernel: [4,4,4]: This suggests that the convolution kernel should be split into tiles where each tile's size is a multiple of [4,4,4].
+
+The total runtime for this configuration is 159 ms.
 
 
 
