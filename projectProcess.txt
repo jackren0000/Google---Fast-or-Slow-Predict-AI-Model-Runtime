@@ -1,0 +1,22 @@
+
+
+
+About the dataset:
+TpuGraphs is the performance prediction dataset on XLA HLO graphs running on TPU (Tensor Processing Units) V3.
+
+There are 5 data collections in total:
+1. layout:xla:random
+2. layout:xla:default
+3. layout:nlp:random
+4. layout:nlp:default
+5. title: xla
+
+*********Notice******* 
+The final score is the average across all collections.
+dataset: https://www.kaggle.com/competitions/predict-ai-model-runtime/data
+
+Q&A:
+1. what is XLA?
+XLA (Accelerated Linear Algebra) is a domain-specific compiler for linear algebra that can accelerate TensorFlow models with 
+potentially no source code changes. For instance, "tf.reduce_sum(x + y * z)", XLA fuse the multiplication, addition and reduction
+into a signle kernel instead of three.
